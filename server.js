@@ -40,6 +40,9 @@ app.get('/', (req, res) => {
     res.json({message: `Bienvenue sur mon application`});
 });
 
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
+
 //désignation du port et écoute
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
